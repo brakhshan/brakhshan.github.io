@@ -1,0 +1,347 @@
+<html>
+ <head>
+  <title>
+   Beheshteh T. Rakhshan Portfolio
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .profile {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .profile h2 {
+            margin: 10px 0 5px;
+            font-size: 24px;
+        }
+        .profile p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .content {
+            text-align: justify;
+            margin: 40px 0;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .portfolio {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .portfolio h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .portfolio .tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .portfolio .tags span {
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .portfolio .item {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .portfolio .item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .portfolio .item p {
+            font-size: 14px;
+            color: #666;
+        }
+        .portfolio .item .date {
+            font-size: 14px;
+            color: #999;
+        }
+        .portfolio .item img {
+            width: 100%;
+            max-width: 600px;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        .footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .social-links a {
+            color: #333;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                left: 20px;
+                background-color: #fff;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .mobile-nav a {
+                color: #333;
+                text-decoration: none;
+                font-size: 16px;
+            }
+        }
+        .wide-svg {
+            width: 100%;
+            height: auto;
+        }
+  </style>
+  <script>
+   function toggleNav() {
+            var nav = document.getElementById("mobile-nav");
+            if (nav.style.display === "flex") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "flex";
+            }
+        }
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <div class="hamburger" onclick="toggleNav()">
+     <div>
+     </div>
+     <div>
+     </div>
+     <div>
+     </div>
+    </div>
+    <h1>
+     Beheshteh T. Rakhshan
+    </h1>
+    <div class="nav">
+     <a href="#about">
+      About
+     </a>
+     <a href="#news">
+      News
+     </a>
+     <a href="#highlights">
+      Highlights
+     </a>
+     <a href="#research">
+      Research
+     </a>
+     <a href="#talks">
+      Talks
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </div>
+    <div class="social-links">
+     <a href="https://www.linkedin.com/in/beheshteh-rakhshan/">
+      <i class="fab fa-linkedin">
+      </i>
+     </a>
+     <a href="https://github.com/brakhshan">
+      <i class="fab fa-github">
+      </i>
+     </a>
+     <a href="https://scholar.google.com/citations?user=AWGU-v8AAAAJ&hl=en&oi=ao">
+      <i class="fas fa-graduation-cap">
+      </i>
+     </a>
+    </div>
+   </div>
+   <div class="mobile-nav" id="mobile-nav">
+    <a href="#about">
+     About
+    </a>
+    <a href="#news">
+     News
+    </a>
+    <a href="#highlights">
+     Highlights
+    </a>
+    <a href="#research">
+     Research
+    </a>
+    <a href="#talks">
+     Talks
+    </a>
+    <a href="#contact">
+     Contact
+    </a>
+   </div>
+   <div class="profile">
+    <img alt="Profile picture of Beheshteh T. Rakhshan" height="150" src="Beheshteh.png" width="150"/>
+    <h2>
+     Beheshteh T. Rakhshan
+    </h2>
+    <p>
+     PhD student, University of Montreal &amp; MILA - Québec AI Institute
+    </p>
+   </div>
+   <div class="content" id="about">
+    <h2>
+     About
+    </h2>
+    <p>
+     I am a first year PhD student in the theory group at the Department of Computer Science and Operations Research (DIRO) Université de Montréal and MILA, where I am fortunate to be advised by Guillaume Rabusseau. My research interests lie in the theoretical foundations of machine learning, particularly Randomized algorithms and Tensor Decompositions. During Summer and Fall 2019, I interned at MILA.
+    </p>
+    <p>
+     Prior to joining MILA, I was a PhD student at Mathematics Department, Purdue University where I was advised by Petros Drineas, you can read my story here.
+    </p>
+   </div>
+   <div class="content" id="news">
+    <h2>
+     News
+    </h2>
+    <p>
+     May 2021: IVADO PhD Excellence Scholarship recipient.
+    </p>
+    <p>
+     December 2020: Microsoft Diversity Award recipient.
+    </p>
+    <p>
+     January 2020: Our paper got accepted in AISTATS 2020! [code]
+    </p>
+   </div>
+   <div class="content" id="highlights">
+    <h2>
+     Highlights
+    </h2>
+    <p>
+     Highlight 1: Received the Best Paper Award at XYZ Conference 2021.
+    </p>
+    <p>
+     Highlight 2: Invited speaker at the ABC Symposium 2020.
+    </p>
+    <p>
+     Highlight 3: Published a groundbreaking paper on Tensor Decompositions in 2019.
+    </p>
+   </div>
+   <div class="content" id="research">
+    <h2>
+     Research
+    </h2>
+    <p>
+     I am broadly interested in the theory behind Big Data and Machine Learning problems. My research is focused on developing fast and efficient randomized algorithms with tensor networks for large-scale problems. My goal is developing algorithms with provable guarantees, accurate and fast solutions to computationally expensive methods by leveraging dimensionality reduction and tensor decompositions’ techniques.
+    </p>
+   </div>
+   <div class="content" id="talks">
+    <h2>
+     Talks
+    </h2>
+    <p>
+     Talk 1: "The Future of Machine Learning" at DEF Conference 2021.
+    </p>
+    <p>
+     Talk 2: "Advancements in Tensor Decompositions" at GHI Workshop 2020.
+    </p>
+    <p>
+     Talk 3: "Randomized Algorithms for Big Data" at JKL Symposium 2019.
+    </p>
+   </div>
+   <div class="content" id="contact">
+    <h2>
+     Contact
+    </h2>
+    <p>
+     Email:
+     <a href="mailto:rakhshab@mila.quebec">
+      beheshteh@example.com
+     </a>
+    </p>
+   </div>
+   <div class="content">
+    <img alt="Wide SVG representing research or academic work" class="wide-svg" src="footer.svg"/>
+   </div>
+  </div>
+ </body>
+</html>
