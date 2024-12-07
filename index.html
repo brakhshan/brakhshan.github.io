@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
    Beheshteh T. Rakhshan Portfolio
   </title>
@@ -126,11 +129,19 @@
             height: 3px;
             background-color: #333;
             margin: 4px 0;
+            transition: 0.4s;
+        }
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
         .mobile-nav {
             display: none;
-            flex-direction: column;
-            gap: 10px;
         }
         .social-links {
             display: flex;
@@ -141,55 +152,112 @@
             font-size: 20px;
             text-decoration: none;
         }
+        .wide-svg {
+            width: 100%;
+            height: auto;
+        }
         @media (max-width: 768px) {
             .container {
                 width: 95%;
             }
             .header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+                flex-direction: column;
+                align-items: stretch;
+                position: relative;
+            }
+            .header h1 {
+                text-align: center;
+                margin-bottom: 10px;
             }
             .nav {
                 display: none;
             }
+            .social-links {
+                justify-content: center;
+                margin-top: 10px;
+            }
             .hamburger {
                 display: flex;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 1000;
             }
             .mobile-nav {
                 display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 70%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
                 flex-direction: column;
-                gap: 10px;
-                position: absolute;
-                top: 60px;
-                left: 20px;
-                background-color: #fff;
-                padding: 10px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                z-index: 999;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             }
             .mobile-nav a {
                 color: #333;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: 20px;
+                padding: 10px;
+                width: 200px;
+                text-align: center;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
             }
-        }
-        .content h2 {
-            font-size: 28px; /* New rule for larger headings in mobile mode */
-        }
-        .wide-svg {
-            width: 100%;
-            height: auto;
+            .mobile-nav a:hover {
+                background-color: #e0e0e0;
+            }
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 998;
+            }
         }
   </style>
   <script>
    function toggleNav() {
             var nav = document.getElementById("mobile-nav");
+            var overlay = document.getElementById("overlay");
+            var hamburger = document.querySelector(".hamburger");
+            
             if (nav.style.display === "flex") {
                 nav.style.display = "none";
+                overlay.style.display = "none";
+                hamburger.classList.remove("active");
+                document.body.style.overflow = "auto";
             } else {
                 nav.style.display = "flex";
+                overlay.style.display = "block";
+                hamburger.classList.add("active");
+                document.body.style.overflow = "hidden";
             }
         }
+
+        // Close mobile nav when a link or overlay is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.mobile-nav a, #overlay').forEach(element => {
+                element.addEventListener('click', () => {
+                    var nav = document.getElementById("mobile-nav");
+                    var overlay = document.getElementById("overlay");
+                    var hamburger = document.querySelector(".hamburger");
+                    
+                    nav.style.display = "none";
+                    overlay.style.display = "none";
+                    hamburger.classList.remove("active");
+                    document.body.style.overflow = "auto";
+                });
+            });
+        });
   </script>
  </head>
  <body>
@@ -261,6 +329,7 @@
      Contact
     </a>
    </div>
+   <div class="overlay" id="overlay"></div>
    <div class="profile">
     <img alt="Profile picture of Beheshteh T. Rakhshan" height="150" src="Beheshteh.png" width="150"/>
     <h2>
@@ -314,7 +383,7 @@
      Research
     </h2>
     <p>
-     I am broadly interested in the theory behind Big Data and Machine Learning problems. My research is focused on developing fast and efficient randomized algorithms with tensor networks for large-scale problems. My goal is developing algorithms with provable guarantees, accurate and fast solutions to computationally expensive methods by leveraging dimensionality reduction and tensor decompositions’ techniques.
+     I am broadly interested in the theory behind Big Data and Machine Learning problems. My research is focused on developing fast and efficient randomized algorithms with tensor networks for large-scale problems. My goal is developing algorithms with provable guarantees, accurate and fast solutions to computationally expensive methods by leveraging dimensionality reduction and tensor decompositions' techniques.
     </p>
    </div>
    <div class="content" id="talks">
