@@ -299,3 +299,13 @@ body {
 
     .video-container iframe {
         height
+    }
+        .flex-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .book-cover {
+        margin-bottom: 20px; /* Add some space below the cover */
+    }
+}
