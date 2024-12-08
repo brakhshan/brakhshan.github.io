@@ -109,7 +109,12 @@
                     <div class="video-explanation">
                         <h3>Tensorized Random Projection</h3>
                         <p>
-                            Exploring advanced techniques in random projection using tensor networks. This talk delves into the innovative approach of applying tensor decomposition methods to improve random projection algorithms.
+                        In this work, we introduce a novel random projection technique for efficiently reducing the dimension of very high-dimensional tensors.
+                        Building upon classical results on Gaussian random projections and Johnson-Lindenstrauss transforms (JLT), we propose two tensorized random projection maps
+                        relying on the tensor train (TT) and CP decomposition format, respectively. The two maps offer very low memory requirements and can be applied efficiently 
+                        when the inputs are low-rank tensors given in the CP or TT format. Our theoretical analysis shows that the dense Gaussian matrix in JLT can be replaced by a low-rank tensor 
+                        implicitly represented in compressed form with random factors, while still approximately preserving the Euclidean distance of the projected inputs. 
+                        In addition, our results reveal that the TT format is substantially superior to CP in terms of the size of the random projection needed to achieve the same distortion ratio. 
                         </p>
                         <p>Key discussion points:</p>
                         <ul>
